@@ -4,3 +4,16 @@ Netzwerk B1 Neu.pdf
 Netzwerk B1 Neu_OCR.txt
 Netzwerk B1 Neu_clean.txt
 chapters/
+
+# Generated vocabulary processing files
+Kapitel_*_glossary.txt
+Kapitel_*_vocab_candidates.txt
+Kapitel_*_vocab_cleaned.txt
+Kapitel_*_vocab_classified.txt
+Kapitel_*_vocab_suspicious.txt
+
+dictionary-de.db
+
+# Python cache
+__pycache__/
+*.pyc

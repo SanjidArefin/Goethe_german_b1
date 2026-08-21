@@ -1,0 +1,838 @@
+abbildung — depiction
+abschneiden — to cut off
+abschnitt — section
+abwechselnd — alternate
+ach — oh
+acht — eight
+achten — to pay attention to
+achtundsechzig — sixty-eight
+achtundsiebzig — seventy-eight
+affe — monkey or ape
+all — all
+allein — alone
+alles — everything
+alltag — everyday life
+alt — old
+andere — other
+anders — different
+anfangen — to begin
+angeben — to indicate
+angebot — offer
+anlass — cause
+anonym — anonymous
+anrufen — to call
+anteil — share
+antwort — answer
+antworten — to answer
+app — app
+arbeit — work
+arbeiten — to work
+arbeitsplatz — workplace
+arbeitswelt — workplace
+arbeitszimmer — workroom
+architekt — architect
+art — kind
+artikel — article
+aufgabe — task
+aufhalten — to halt
+aufstehen — to get up
+ausdrücken — to express
+ausflug — excursion
+ausgehen — to go out
+ausnahme — exception
+ausreden — to finish speaking
+aussage — statement
+aussagen — to state
+aussprache — pronunciation
+auswendig — exterior
+auszeichnung — distinction
+auto — car
+automat — automaton
+autonom — autonomous
+außer — except
+außerdem — besides
+bad — bath
+baden-württemberg — Baden-Württemberg
+bahnhof — station
+bald — soon
+ball — ball
+bauch — abdomen
+bauer — farmer
+bedeuten — to imply
+bedeutung — meaning
+bedingung — requirement
+befinden — condition
+befragen — to question
+begegnen — meet
+beginnen — to begin
+beiden — weak all-case plural
+beispiel — example
+bekannte — female equivalent of Bekannter: female acquaintance
+bekannter — acquaintance
+bekommen — to receive
+beliebt — popular
+bequem — comfortable
+berichten — to relate
+beruf — occupation
+berufen — to refer to
+beruflich — professional
+berühmt — famous
+beschreiben — to describe
+besondere — special
+besonders — especially
+besser — better
+beste — best
+bestellen — to order
+bestimmen — to determine
+bestimmt — certain
+besuchen — to visit
+betrieblich — operational
+bewegen — to motivate
+bewerten — to evaluate
+bezahlen — to pay
+bezeichnen — to name
+bezeichnet — denoted
+bezeichnung — designation
+beziehung — relation
+bibliothek — library
+bieten — to offer
+bilden — to form
+bildung — cultivation
+bildunterschrift — caption of a picture
+biografie — biography
+bis — until
+blatt — leaf
+bleiben — to stay
+blick — view
+boot — boat
+brauch — custom
+brauchen — to need
+braun — brown
+brauner — brown horse
+breit — broad
+brief — letter
+bringen — to bring
+buch — book
+buchstabe — letter
+bus — bus
+bär — bear
+bären — all-case plural
+bürgermeister — mayor
+cappuccino — cappuccino
+castingshow — talent show
+chefin — female boss
+chip — chip
+dach — roof
+dafür — for that
+dahin — there
+danach — afterwards
+darmstadt — Darmstadt
+das — who
+daten — data
+dauernd — continuous
+davon — from it
+dazu — in addition to it
+denken — to think
+deshalb — therefore
+deswegen — therefore
+deutsch — German
+deutsche — female equivalent of Deutscher: female German
+deutschland — Germany
+deutschsprachig — germanophone
+diagramm — diagram
+dienstag — Tuesday
+dieser — this one
+digital — digital
+diktieren — to dictate
+dingen — to hire for a crime
+diskutieren — to discuss
+doktorand — doctoral student
+donnerstag — Thursday
+draußen — outside
+dreiundsiebzig — seventy-three
+dritt — only used in zu dritt.
+drohne — drone
+drücken — to press
+du — you
+durchschnitt — average
+dürfen — to be allowed
+e-bike — e-bike
+e-book — e-book
+ebenfalls — also
+eher — rather
+eigen — own
+einfach — simple
+einhalten — to comply with
+einheimisch — domestic
+einmal — once
+einspänner — one-horse carriage
+einundsiebzig — seventy-one
+einwohner — inhabitant
+einzeln — single
+elefant — elephant
+elia — Elijah
+ende — end
+endlich — finally
+endung — ending
+energie — energy
+eng — narrow
+enger — a town in Herford district
+entspannen — to relax
+entstehen — to come into being
+erde — earth
+erfolgen — to happen
+erforschung — exploration
+ergänzen — to complete
+erhalten — to receive
+erholen — to recover
+erholung — recovery
+erklären — to explain
+erledigen — to free
+erst — only
+erstellen — to create
+erwarten — to expect
+erwartung — expectation
+erzählen — to tell
+essen — to eat
+etwa — approximately
+etwas — something
+europäisch — European
+eventuell — potential
+exakt — exact
+expert — expert
+experte — expert
+fahren — to travel
+fahrend — nomadic
+fahrrad — bicycle
+fahrzeug — vehicle
+fallen — to fall
+falsch — wrong
+familie — family
+fangen — to catch
+fantasie — imagination
+fassen — to gird
+fast — almost
+favorit — favourite
+feld — field
+fern — remote
+finden — to find
+firma — A company
+firmen — to confirm
+fischer — fisher
+fit — fit
+fleisch — flesh
+fliegen — to fly
+flur — hall
+fläche — surface
+folge — sequence
+formen — to form
+formulieren — to formulate
+forschung — research
+fort — away
+fortschritt — progress
+foto — photo
+fotograf — photographer
+frage — question
+fragen — to ask
+frankreich — France
+frei — free
+freitag — Friday
+freizeit — free time
+freuen — to gladden
+freund — friend
+freunde — friends
+freundin — female friend
+frische — freshness
+früh — early
+früher — former
+funktionieren — to function
+futur — future tense
+fuß — foot
+fühlen — to feel
+führerschein — driver's license
+fünf — five
+fünft — only used in zu fünft.
+fünftel — fifth
+fünfundsechzig — sixty-five
+fünfundsiebzig — seventy-five
+fürs — für + das
+ganz — whole
+garen — cook
+garten — garden
+gast — guest
+geben — to give
+geburtstag — birthday
+gebären — to give birth
+gebäude — building
+gefallen — fallen
+gefunden — found
+gegend — area
+gegensatz — opposition
+gegenseitig — mutual
+gehalt — content
+gehen — to go
+geld — money
+gelingen — to turn out well
+gemeinsam — common
+gemüse — vegetable
+gemütlich — cosy
+genau — exact
+genauso — just as
+genießen — to enjoy
+genug — enough
+gepäck — luggage
+gern — gladly
+gerne — don't mention it
+geschichte — story
+gespräch — conversation
+gesprächspartner — interlocutor
+gesprächspartnerin — female equivalent of Gesprächspartner
+gestern — yesterday
+gewinnen — to win
+gewitter — thunderstorm
+gewohnheit — habit
+geworden — become
+gezielt — aimed
+glauben — to believe something
+gleich — equal
+gleichen — to be like
+gleichzeitig — simultaneous
+glück — happiness
+glücklich — happy
+glücksbringer — lucky charm
+grad — degree
+graf — count
+grafik — graph
+grammatik — grammar
+grenze — border
+groß — big
+große — female equivalent of Großer: female adult
+grube — pit
+gruppe — group
+größe — size
+grün — green
+gründen — to found
+grüner — green
+grünfläche — green space
+grüßen — to greet
+gut — good
+gären — to ferment
+haben — forms the perfect aspect
+hamburg — Hamburg
+handy — mobile phone
+hauptproblem — main problem
+hauptpunkt — main point
+haus — house
+hausarbeit — housework
+hausen — to dwell
+haushalt — household
+haut — skin
+heiß — hot
+heißen — to have a name
+helfen — to help
+her — hither
+herr — man
+heutig — today's
+hilfe — help
+hinter — behind
+hoffen — to hope
+hoffentlich — hopefully
+homeoffice — home office
+hotel — hotel
+hundert — one hundred
+hässlich — ugly
+häufig — frequent
+häusern — a municipality of Baden-Württemberg
+höhe — height
+hören — to hear
+hürde — hurdle
+idee — idea
+ihr — you
+infinitiv — infinitive
+informationen — lowdown
+informieren — to inform
+innen — within
+insgesamt — overall
+interessant — interesting
+interessieren — to interest
+internationalismus — internationalism
+inzwischen — since then
+irgendwann — sometime
+italien — Italy
+jahr — year
+jeder — each
+jemand — someone
+job — job
+joker — joker
+journalist — journalist
+junge — boy
+jury — panel of judges
+kaffee — coffee
+kaffeehaus — coffeehouse
+kamera — camera
+kanal — canal
+kanton — canton
+kaputtgehen — to break
+karriere — career
+karte — card
+kasus — case
+kaufen — to buy
+kaum — barely
+kennen — to know
+kilo — kilo
+kind — kid
+kitschig — kitschy
+klamotte — clothes
+klar — clear
+kleidung — clothing
+klein — small
+klimawandel — climate change
+knapp — scarce
+kollege — colleague
+kollegin — female equivalent of Kollege
+kommen — to come
+konkret — tangible
+konsumieren — to consume
+kontrollieren — to check
+konzept — blueprint
+konzert — concert
+kopf — head
+kreisen — to circle
+kreuzen — to cross
+kultur — culture
+kunde — customer
+kurs — course
+kurz — short
+kuscheltier — stuffed animal
+können — to be able
+küche — kitchen
+künstler — artist
+labor — laboratory
+lage — location
+land — country
+lang — long
+langweilig — boring
+lassen — to allow
+lauten — to be
+leben — to live
+lebensmittel — any item or substance intended for human consumption
+lebensqualität — quality of life
+lebenswert — worth living
+leicht — light
+leider — unfortunately
+leihen — to borrow
+lernen — to learn
+lesen — to read
+letzen — to injure
+leute — people
+lieb — lovable
+lied — song
+liegen — to lie
+links — on the left
+liste — list
+luft — air
+lust — desire
+lustig — funny
+längst — long ago
+lösung — solution
+löwe — lion
+machen — to make
+macht — power
+mama — mum
+man — just
+markieren — to mark
+mars — Mars
+maskulin — masculine
+medizinisch — medicinal
+mehrere — multiple
+mehrfach — several
+meist — mostly
+meistens — mostly
+melange — coffee blend
+melodie — melody
+mensch — human
+meter — meter
+miete — rent
+milch — milk
+mindestens — at least
+mischen — to mix
+mitarbeiter — employee
+miteinander — together
+mitglied — member
+mitgliedsstaat — member state
+mittagspause — lunchbreak
+mittel — agent
+mittlerweile — meanwhile
+mittwoch — Wednesday
+mobilität — mobility
+modalverb — modal verb
+moment — moment
+montag — Monday
+morgen — morning
+motor — engine
+motorboot — motorboat
+musik — music
+musiker — musician
+muss — necessity
+mögen — to like
+möglicherweise — possibly
+müde — tired
+müll — rubbish
+müller — miller
+münchen — Munich
+müssen — to have to
+nachbar — neighbour
+nachbarn — plural
+nah — near
+name — name
+namen — all-case plural
+natürlich — natural
+neben — next to
+negativ — negative
+nehmen — to take
+nennen — to name
+nervig — sinewy
+neu — new
+neunundsechzig — sixty-nine
+neunundsiebzig — seventy-nine
+neutral — neutral
+nichts — nothing
+nomen — any declinable part of speech
+notieren — to note
+notiert — listed
+notiz — note
+nun — now
+nutzen — benefit
+nächster — next
+nähe — nearness
+nämlich — namely
+oben — above
+obst — fruit
+okay — OK
+opa — grandpa
+ordnen — to put in order
+ordnung — arrangement
+organisation — organisation
+paar — some
+packen — to pack
+paket — packet
+papa — dad
+papier — paper
+park — park
+parkplatz — parking lot
+party — party
+passagier — passenger
+passen — to fit
+passend — suitable
+passieren — to happen
+perfekt — perfect
+person — person
+pferd — horse
+plan — planar
+planen — to plan
+planet — planet
+plattform — platform
+platz — square
+plural — pluralistic
+pläne — synonym of Ebene
+politiker — politician
+polizist — police officer
+positiv — positive
+post — mail
+postbote — mailman
+praktikant — trainee
+preisen — to hail
+prinzip — principle
+privat — private
+pro — per
+problem — problem
+produzieren — to produce
+prognose — prognosis
+prozent — percent
+präposition — adposition
+präsens — present tense
+präzise — precise
+prüfung — an official test or examination on a subject
+pädagoge — pedagogue
+radweg — bicycle lane
+rakete — rocket
+raten — to advise
+ratschlag — piece of advice
+raum — space
+realisieren — to realize
+realistisch — realistic
+recherchieren — to research
+rechts — on the right
+recycling — recycling
+regel — rule
+reihenfolge — order
+reisen — to travel
+rekord — record
+relativpronomen — relative pronoun
+relativsatz — relative clause
+reutlingen — Reutlingen
+rhythmus — rhythm
+richtig — correct
+roboter — robot
+rolle — roll
+romantisch — romantic
+rufen — to call out
+ruhe — calm
+ruhig — quiet
+rundlauf — the act of going around
+räumen — to clear an area of debris
+sagen — to say
+sahne — cream
+sammeln — to gather
+samstag — Saturday
+satellit — satellite
+satz — sentence
+satzanfang — beginning of a sentence
+schenken — to give as a present
+schiff — ship
+schlafen — to sleep
+schlagen — to beat
+schlecht — bad
+schluss — end
+schmal — narrow
+schneider — tailor
+schnell — quick
+schokolade — chocolate
+schreiben — to write
+schreiten — to stride
+schule — school
+schulen — to school
+schwarzer — a black object or being
+schweben — to hover
+schweiz — Switzerland
+schweizer — Swiss person
+schwer — heavy
+schönen — to massage
+sechs — six
+sechsundsechzig — sixty-six
+sechsundsiebzig — seventy-six
+sehen — to see
+sein — forms the present perfect and past perfect tenses of certain verbs
+seit — since
+selber — self
+senden — to broadcast
+sendung — delivery
+setzen — causative of sitzen: to set
+sicher — safe
+siebenundsechzig — sixty-seven
+siebenundsiebzig — seventy-seven
+siebte — seventh
+silvester — New Year's Eve
+singen — to sing
+singular — singular
+situation — situation
+sitzen — to sit
+sohn — son
+solarzelle — solar cell
+soll — debit
+sollen — should
+songs — plural
+sonntag — Sunday
+sorgen — to take care of
+sowieso — anyway
+sozial — social
+sparen — to save up
+spaziergang — walk
+spaß — fun
+speziell — special
+spiel — a game
+spielen — to play
+spielerin — player
+spielfigur — man
+spontan — spontaneous
+sport — sport
+sprache — language
+sprechen — to speak
+spreewald — Spreewald
+spät — late
+stadt — city
+stadtbewohner — urbanite
+stadtviertel — district
+stapeln — to pile up
+staubsaugen — to vacuum
+stehen — to stand
+stelle — location
+stellen — causative of stehen: to put
+stern — a star
+steuern — to steer
+stichpunkt — keyword
+stil — style
+stimme — voice
+stimmt — correct
+stofftier — stuffed animal
+straße — street
+stress — stress
+strom — a large river
+student — student
+studentin — female equivalent of Student
+studium — study
+suchen — to search
+super — super
+surfen — to surf
+synchronsprecher — voice actor
+szene — scene
+sänger — singer
+südlich — south
+süß — sweet
+tag — day
+tage — period
+tagen — to meet
+tante — aunt
+tauschen — to trade
+team — team
+teil — part
+teilen — to split
+teilnehmen — to participate
+temperatur — temperature
+termin — date
+text — text
+texten — to write
+thema — topic
+tief — deep
+tier — animal
+tipp — tip
+tochter — daughter
+toll — great
+total — total
+tourist — tourist
+treffen — to meet
+trend — trend
+trotzdem — anyhow
+täglich — daily
+tätigkeit — activity
+umfrage — survey
+umschreibung — paraphrase
+umwelt — environment
+umweltbewusst — environmentally-friendly
+umweltfreundlich — environmentally friendly
+ungeduldig — impatient
+unser — our
+unterhalten — to maintain
+unterstützen — to support
+unverständlich — incomprehensible
+urlaub — holiday
+vater — father
+verb — verb
+verbessert — improved
+verboten — forbidden
+vergleich — comparison
+vergleichen — to compare
+vergrößern — to enlarge
+verkehrsmittel — transport
+vermutung — guess
+verschicken — to send out
+verschieden — deceased
+verschwenden — to waste
+verstehen — to understand
+verständlich — understandable
+vertiefung — deepening
+vertrauen — to trust
+verwendet — used
+verzichten — to give up
+veränderung — change
+viel — much
+vielleicht — perhaps
+vier — four
+viert — only used in zu viert.
+vierundsechzig — sixty-four
+vierundsiebzig — seventy-four
+vokal — vowel
+voll — full
+voraussichtlich — expected
+vorbereiten — to prepare
+vorfreude — joyful anticipation
+vorhaben — to intend
+vorn — in front
+vorsatz — malice
+vorstellen — to introduce
+vorstellungsgespräch — a job interview
+waadt — Vaud
+wachsen — to grow
+wahnsinn — insanity
+wahren — to protect
+wahrheit — truth
+wahrscheinlich — likely
+warten — to wait
+wasser — water
+wasserstraße — waterway
+wecker — alarm clock
+wegen — for
+wegwerfen — to throw away
+weit — wide
+weiter — further
+weitergeben — to impart
+weiß — white
+welcher — which
+welt — world
+weltall — cosmos
+weltraum — space
+weltweit — worldwide
+weniger — less
+wer — who
+werben — to recruit
+werden — will
+werfen — to throw
+wetter — weather
+wettervorhersage — weather forecast
+wichtig — important
+wiederholt — repeatedly
+wiener — an inhabitant of Vienna
+wind — wind
+windturbine — wind turbine
+wissen — to know
+wissenschaftler — scientist
+wohnanlage — multifamily residential
+wohnen — to live
+wohnort — place of residence
+wohnraum — housing
+wohnung — domicile
+wohnzimmer — living room
+wolke — cloud
+wollen — wool
+worauf — whereupon
+wort — word as an isolated unit
+worum — about what
+wozu — for what reason
+wunsch — wish
+wählen — to choose
+wünschen — to wish for
+würfeln — to dice
+zahlen — to pay
+zehn — ten
+zeit — time
+zeitangabe — indication of time
+zentimeter — centimetre
+zentral — central
+zettel — a small or loose piece of paper
+ziehen — to pull
+ziel — target
+zimmer — room
+zitat — quotation
+zoo — zoo
+zuerst — first
+zufrieden — satisfied
+zukunft — future
+zukünftig — future
+zurückrufen — to call back
+zusammen — together
+zusammenarbeiten — to work together
+zusammenleben — living together
+zwei — two
+zweit — only used in zu zweit.
+zweiundsiebzig — seventy-two
+zwischen — between
+zählen — to count
+ändern — to change
+äußern — to utter
+österreich — Austria
+österreicher — Austrian
+überhaupt — overall
+übermorgen — overmorrow
+übernehmen — to take over
+überraschen — to surprise
+übrigens — apart from that

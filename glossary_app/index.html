@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f4f7f3">
+    <title>B1 Glossar</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">B1</div>
+          <div>
+            <p class="brand-kicker">Netzwerk neu</p>
+            <h1>Glossar</h1>
+          </div>
+        </div>
+
+        <nav class="chapter-nav" aria-label="Chapters">
+          <div class="nav-heading">
+            <span>Kapitel</span>
+            <span id="total-count">...</span>
+          </div>
+          <button class="chapter-tab is-active" type="button" data-chapter="all" aria-pressed="true">
+            <span>Alle Kapitel</span>
+            <span class="tab-count" id="all-count">...</span>
+          </button>
+          <div id="chapter-tabs"></div>
+        </nav>
+
+        <div class="sidebar-footer">
+          <span class="footer-dot" aria-hidden="true"></span>
+          <span id="load-status">Glossar wird geladen</span>
+        </div>
+      </aside>
+
+      <main class="workspace">
+        <header class="workspace-header">
+          <div>
+            <p class="section-kicker" id="chapter-label">Alle Kapitel</p>
+            <h2 id="page-title">Wortschatz</h2>
+          </div>
+          <label class="search-field" for="search-input">
+            <span class="search-symbol" aria-hidden="true">&#8981;</span>
+            <span class="sr-only">Search the glossary</span>
+            <input
+              id="search-input"
+              type="search"
+              autocomplete="off"
+              spellcheck="false"
+              placeholder="Wort oder Bedeutung suchen"
+            >
+            <button id="clear-search" class="clear-search" type="button" title="Clear search" aria-label="Clear search" hidden>
+              &times;
+            </button>
+          </label>
+        </header>
+
+        <section class="word-list-panel" aria-labelledby="page-title">
+          <header class="list-header">
+            <div class="list-summary">
+              <span id="result-count">0 entries</span>
+              <span class="sort-note">A-Z</span>
+            </div>
+            <span class="list-label">Deutsch</span>
+            <span class="list-label">English</span>
+          </header>
+          <div id="word-list" class="word-list" role="listbox" aria-label="Glossary entries"></div>
+        </section>
+      </main>
+
+      <aside class="detail-panel" aria-live="polite">
+        <div id="word-detail" class="word-detail">
+          <p class="empty-detail">Select a word</p>
+        </div>
+        <div class="detail-actions">
+          <button id="previous-word" class="icon-button" type="button" title="Previous word" aria-label="Previous word">&larr;</button>
+          <span id="detail-position">0 / 0</span>
+          <button id="next-word" class="icon-button" type="button" title="Next word" aria-label="Next word">&rarr;</button>
+        </div>
+      </aside>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
