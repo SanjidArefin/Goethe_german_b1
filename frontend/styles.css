@@ -345,14 +345,16 @@ button {
   grid-template-columns: var(--table-columns);
   position: sticky;
   top: 0;
-  z-index: 2;
+  z-index: 3;
   min-height: 47px;
   align-items: center;
   padding: 0 32px;
   border-bottom: 1px solid var(--line);
+  background: var(--surface);
   color: var(--muted);
   font-size: 12px;
   font-weight: 700;
+  isolation: isolate;
   text-transform: uppercase;
 }
 
@@ -399,6 +401,7 @@ button {
   overflow-x: auto;
   border-bottom: 1px solid var(--line);
   background: var(--surface);
+  isolation: isolate;
   scrollbar-width: thin;
 }
 

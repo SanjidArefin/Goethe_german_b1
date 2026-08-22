@@ -62,6 +62,9 @@ async function run() {
       "        const kHeading = document.querySelector('.letter-heading[data-letter=\\\"K\\\"]');",
       "        const wordListPanel = document.querySelector('.word-list-panel');",
       "        const appShell = document.querySelector('.app-shell').getBoundingClientRect();",
+      "        const stickyBarsOpaque = ['.list-header', '.alphabet-jump'].every((selector) => (",
+      "          getComputedStyle(document.querySelector(selector)).backgroundColor !== 'rgba(0, 0, 0, 0)'",
+      "        ));",
       "        const headerCells = [...document.querySelector('.list-header').children];",
       "        const rowCells = [...document.querySelector('.word-row').children];",
       "        const headerBounds = headerCells.map((cell) => cell.getBoundingClientRect());",
@@ -80,6 +83,7 @@ async function run() {
       "          columnsAligned,",
       "          fillsViewport: Math.abs(appShell.width - window.innerWidth) <= 1",
       "            && Math.abs(appShell.height - window.innerHeight) <= 1,",
+      "          stickyBarsOpaque,",
       "          foundTransliterated,",
       "          movedSelection: before !== document.querySelector('.word-row.is-selected')?.dataset.entryId,",
       "          initialTheme,",
@@ -105,6 +109,7 @@ async function run() {
     assert.equal(result.alphabetJumpMoved, true);
     assert.equal(result.columnsAligned, true);
     assert.equal(result.fillsViewport, true);
+    assert.equal(result.stickyBarsOpaque, true);
     assert.equal(result.foundTransliterated, true);
     assert.equal(result.movedSelection, true);
     assert.equal(result.initialTheme, "dark");
