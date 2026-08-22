@@ -3,8 +3,15 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#f4f7f3">
+    <meta name="theme-color" content="#131f24">
     <title>B1 Glossar</title>
+    <script>
+      try {
+        document.documentElement.dataset.theme = localStorage.getItem("b1-glossar-theme") || "dark";
+      } catch {
+        document.documentElement.dataset.theme = "dark";
+      }
+    </script>
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
@@ -42,20 +49,25 @@
             <p class="section-kicker" id="chapter-label">Alle Kapitel</p>
             <h2 id="page-title">Wortschatz</h2>
           </div>
-          <label class="search-field" for="search-input">
-            <span class="search-symbol" aria-hidden="true">&#8981;</span>
-            <span class="sr-only">Wort oder Bedeutung suchen</span>
-            <input
-              id="search-input"
-              type="search"
-              autocomplete="off"
-              spellcheck="false"
-              placeholder="Wort oder Bedeutung suchen"
-            >
-            <button id="clear-search" class="clear-search" type="button" title="Suche leeren" aria-label="Suche leeren" hidden>
-              &times;
+          <div class="header-actions">
+            <label class="search-field" for="search-input">
+              <span class="search-symbol" aria-hidden="true">&#8981;</span>
+              <span class="sr-only">Wort oder Bedeutung suchen</span>
+              <input
+                id="search-input"
+                type="search"
+                autocomplete="off"
+                spellcheck="false"
+                placeholder="Wort oder Bedeutung suchen"
+              >
+              <button id="clear-search" class="clear-search" type="button" title="Suche leeren" aria-label="Suche leeren" hidden>
+                &times;
+              </button>
+            </label>
+            <button id="theme-toggle" class="theme-toggle" type="button" title="Dunkelmodus aktivieren" aria-label="Dunkelmodus aktivieren" aria-pressed="false">
+              <span class="theme-toggle-icon" aria-hidden="true">&#9790;</span>
             </button>
-          </label>
+          </div>
         </header>
 
         <section class="word-list-panel" aria-labelledby="page-title">

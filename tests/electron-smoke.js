@@ -1,10 +1,23 @@
 const assert = require("node:assert/strict");
+const fs = require("node:fs");
+const os = require("node:os");
 const path = require("node:path");
 const { app, BrowserWindow, ipcMain } = require("electron");
 const { getGlossary } = require("../backend/glossary-service");
 
 app.commandLine.appendSwitch("disable-gpu");
+const testProfile = path.join(os.tmpdir(), `b1-glossar-smoke-${process.pid}`);
+fs.rmSync(testProfile, { force: true, recursive: true });
+app.setPath("userData", testProfile);
 ipcMain.handle("glossary:load", () => getGlossary());
+
+function removeTestProfile() {
+  try {
+    fs.rmSync(testProfile, { force: true, maxRetries: 3, recursive: true, retryDelay: 100 });
+  } catch {
+    // Chromium can briefly retain a profile handle on Windows after shutdown.
+  }
+}
 
 async function run() {
   await app.whenReady();
@@ -30,6 +43,9 @@ async function run() {
       "      reject(new Error('Glossary UI did not render any word rows.'));",
       "      return;",
       "    }",
+      "    const initialTheme = document.documentElement.dataset.theme;",
+      "    const themeToggle = document.querySelector('#theme-toggle');",
+      "    themeToggle.click();",
       "    const input = document.querySelector('#search-input');",
       "    input.value = 'abhaengen';",
       "    input.dispatchEvent(new Event('input', { bubbles: true }));",
@@ -47,6 +63,9 @@ async function run() {
       "          chapterRows: chapterRows.length,",
       "          foundTransliterated,",
       "          movedSelection: before !== document.querySelector('.word-row.is-selected')?.dataset.entryId,",
+      "          initialTheme,",
+      "          toggledTheme: document.documentElement.dataset.theme,",
+      "          storedTheme: localStorage.getItem('b1-glossar-theme'),",
       "          nodeExposed: typeof window.require !== 'undefined',",
       "        }), 0);",
       "      }, 0);",
@@ -65,11 +84,15 @@ async function run() {
     assert.equal(result.chapterRows, 892);
     assert.equal(result.foundTransliterated, true);
     assert.equal(result.movedSelection, true);
+    assert.equal(result.initialTheme, "dark");
+    assert.equal(result.toggledTheme, "light");
+    assert.equal(result.storedTheme, "light");
     assert.equal(result.nodeExposed, false);
-    console.log("Electron smoke test passed: local glossary UI loaded without a web server.");
+    console.log("Electron smoke test passed: offline glossary UI, dark default, and saved theme toggle.");
   } finally {
     window.destroy();
     app.quit();
+    removeTestProfile();
   }
 }
 

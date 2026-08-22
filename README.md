@@ -10,7 +10,8 @@ npm start
 ```
 
 The app loads its curated vocabulary from `backend/data/glossary.json`; it does
-not need a web server or an internet connection.
+not need a web server or an internet connection. It opens in dark mode by
+default and remembers a user's light/dark preference.
 
 ## Checks
 

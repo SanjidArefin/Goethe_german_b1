@@ -1,20 +1,64 @@
 :root {
-  --canvas: #e8efea;
-  --surface: #fbfcfa;
-  --surface-muted: #f1f5f0;
-  --ink: #18231d;
-  --muted: #647169;
-  --line: #d7dfd8;
-  --line-strong: #becbc1;
-  --green: #13795b;
-  --green-soft: #dceee4;
-  --orange: #c55a32;
-  --gold: #d7a315;
-  --blue: #277d93;
-  --shadow: 0 16px 38px rgba(33, 55, 40, 0.11);
+  --canvas: #131f24;
+  --surface: #202f36;
+  --surface-muted: #2a3a43;
+  --sidebar: #17262d;
+  --detail-surface: #1c2a31;
+  --input-surface: #26363e;
+  --ink: #f7f7f7;
+  --muted: #afafaf;
+  --placeholder: #92a0a6;
+  --line: #3a4b55;
+  --line-strong: #53636b;
+  --row-line: #31424b;
+  --row-hover: #263a43;
+  --row-selected: #25482d;
+  --green: #58cc02;
+  --green-deep: #46a302;
+  --green-soft: #2e5e2c;
+  --green-focus: rgba(88, 204, 2, 0.24);
+  --green-border: #89e219;
+  --blue: #1cb0f6;
+  --yellow: #ffc800;
+  --yellow-soft: #4b3d12;
+  --yellow-ink: #ffe28a;
+  --red: #ff4b4b;
+  --word-meaning: #d2e4e8;
+  --on-accent: #131f24;
+  --shadow: 0 16px 38px rgba(0, 0, 0, 0.28);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--ink);
   background: var(--canvas);
+}
+
+:root[data-theme="light"] {
+  --canvas: #f7f7f7;
+  --surface: #ffffff;
+  --surface-muted: #ddf4ff;
+  --sidebar: #f7f7f7;
+  --detail-surface: #ffffff;
+  --input-surface: #ffffff;
+  --ink: #4b4b4b;
+  --muted: #777777;
+  --placeholder: #8d8d8d;
+  --line: #e5e5e5;
+  --line-strong: #afafaf;
+  --row-line: #e5e5e5;
+  --row-hover: #f4fceb;
+  --row-selected: #e8fad6;
+  --green: #58cc02;
+  --green-deep: #46a302;
+  --green-soft: #e8fad6;
+  --green-focus: rgba(88, 204, 2, 0.2);
+  --green-border: #89e219;
+  --blue: #1cb0f6;
+  --yellow: #ffc800;
+  --yellow-soft: #fff3c0;
+  --yellow-ink: #765900;
+  --red: #ff4b4b;
+  --word-meaning: #4b4b4b;
+  --on-accent: #ffffff;
+  --shadow: 0 16px 38px rgba(75, 75, 75, 0.12);
 }
 
 * {
@@ -55,7 +99,7 @@ button {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  background: #f4f7f3;
+  background: var(--sidebar);
   border-right: 1px solid var(--line);
 }
 
@@ -73,9 +117,9 @@ button {
   width: 42px;
   height: 42px;
   place-items: center;
-  color: #fff;
+  color: var(--on-accent);
   background: var(--green);
-  border: 4px solid #bcd8c5;
+  border: 4px solid var(--green-border);
   font-size: 13px;
   font-weight: 800;
 }
@@ -134,7 +178,7 @@ button {
 }
 
 .chapter-tab.is-active {
-  color: #0c513d;
+  color: var(--green);
   background: var(--green-soft);
   border-left-color: var(--green);
   font-weight: 800;
@@ -165,7 +209,7 @@ button {
 .footer-dot {
   width: 8px;
   height: 8px;
-  background: var(--gold);
+  background: var(--yellow);
 }
 
 .workspace {
@@ -185,6 +229,13 @@ button {
   border-bottom: 1px solid var(--line);
 }
 
+.header-actions {
+  display: flex;
+  width: min(468px, 57%);
+  align-items: center;
+  gap: 10px;
+}
+
 .workspace-header h2 {
   margin: 4px 0 0;
   font-size: 29px;
@@ -193,18 +244,18 @@ button {
 
 .search-field {
   display: flex;
-  width: min(410px, 52%);
+  width: 100%;
   min-height: 46px;
   align-items: center;
   gap: 9px;
   padding: 0 11px 0 14px;
   border: 1px solid var(--line-strong);
-  background: #fff;
+  background: var(--input-surface);
 }
 
 .search-field:focus-within {
   border-color: var(--green);
-  box-shadow: 0 0 0 3px rgba(19, 121, 91, 0.12);
+  box-shadow: 0 0 0 3px var(--green-focus);
 }
 
 .search-symbol {
@@ -223,7 +274,43 @@ button {
 }
 
 .search-field input::placeholder {
-  color: #8b9690;
+  color: var(--placeholder);
+}
+
+.theme-toggle {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  flex: 0 0 46px;
+  place-items: center;
+  border: 1px solid var(--line-strong);
+  border-bottom-width: 3px;
+  border-radius: 8px;
+  background: var(--input-surface);
+  color: var(--yellow);
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  border-color: var(--blue);
+  background: var(--blue);
+  color: var(--on-accent);
+}
+
+.theme-toggle:focus-visible,
+.icon-button:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 2px;
+}
+
+.theme-toggle:active {
+  border-bottom-width: 1px;
+  transform: translateY(2px);
+}
+
+.theme-toggle-icon {
+  font-size: 21px;
+  line-height: 1;
 }
 
 .clear-search {
@@ -240,7 +327,7 @@ button {
 }
 
 .clear-search:hover {
-  color: var(--orange);
+  color: var(--red);
 }
 
 .word-list-panel {
@@ -271,8 +358,8 @@ button {
   display: inline-grid;
   min-width: 30px;
   place-items: center;
-  color: #886100;
-  background: #fff1c7;
+  color: var(--yellow-ink);
+  background: var(--yellow-soft);
   font-size: 10px;
 }
 
@@ -302,18 +389,18 @@ button {
   align-items: center;
   padding: 0 32px;
   border: 0;
-  border-bottom: 1px solid #e6ebe6;
+  border-bottom: 1px solid var(--row-line);
   background: transparent;
   cursor: pointer;
   text-align: left;
 }
 
 .word-row:hover {
-  background: #f5faf6;
+  background: var(--row-hover);
 }
 
 .word-row.is-selected {
-  background: #e8f4ec;
+  background: var(--row-selected);
   box-shadow: inset 3px 0 0 var(--green);
 }
 
@@ -327,7 +414,7 @@ button {
 
 .word-meaning {
   overflow: hidden;
-  color: #45534a;
+  color: var(--word-meaning);
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -352,7 +439,7 @@ button {
   display: grid;
   grid-template-rows: minmax(0, 1fr) auto;
   min-height: 100vh;
-  background: #f8faf7;
+  background: var(--detail-surface);
   border-left: 1px solid var(--line);
 }
 
@@ -364,8 +451,8 @@ button {
   display: inline-flex;
   margin: 0 0 24px;
   padding: 5px 8px;
-  color: #875f00;
-  background: #fff1c7;
+  color: var(--yellow-ink);
+  background: var(--yellow-soft);
   font-size: 12px;
   font-weight: 800;
 }
@@ -393,7 +480,7 @@ button {
 
 .detail-meaning {
   margin: 0;
-  color: #2d3d33;
+  color: var(--word-meaning);
   font-size: 21px;
   line-height: 1.35;
 }
@@ -422,13 +509,13 @@ button {
   height: 36px;
   place-items: center;
   border: 1px solid var(--line-strong);
-  background: #fff;
+  background: var(--input-surface);
   cursor: pointer;
   font-size: 18px;
 }
 
 .icon-button:hover:not(:disabled) {
-  color: #fff;
+  color: var(--on-accent);
   background: var(--green);
   border-color: var(--green);
 }
@@ -535,6 +622,10 @@ button {
     width: min(380px, 55%);
   }
 
+  .header-actions {
+    width: min(424px, 60%);
+  }
+
   .word-list {
     height: min(58vh, 590px);
   }
@@ -577,6 +668,10 @@ button {
   }
 
   .search-field {
+    width: 100%;
+  }
+
+  .header-actions {
     width: 100%;
   }
 

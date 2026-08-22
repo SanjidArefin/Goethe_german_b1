@@ -11,7 +11,7 @@ function createWindow() {
     minWidth: 880,
     minHeight: 620,
     show: false,
-    backgroundColor: "#f4f7f3",
+    backgroundColor: "#131f24",
     autoHideMenuBar: true,
     icon: path.join(__dirname, "..", "build", "icon.ico"),
     webPreferences: {

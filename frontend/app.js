@@ -22,7 +22,35 @@ const elements = {
   previousWord: document.querySelector("#previous-word"),
   nextWord: document.querySelector("#next-word"),
   loadStatus: document.querySelector("#load-status"),
+  themeToggle: document.querySelector("#theme-toggle"),
+  themeColor: document.querySelector('meta[name="theme-color"]'),
 };
+
+function applyTheme(theme) {
+  const selectedTheme = theme === "dark" ? "dark" : "light";
+  const isDark = selectedTheme === "dark";
+
+  document.documentElement.dataset.theme = selectedTheme;
+  elements.themeToggle.setAttribute("aria-pressed", String(isDark));
+  elements.themeToggle.setAttribute(
+    "aria-label",
+    isDark ? "Hellmodus aktivieren" : "Dunkelmodus aktivieren",
+  );
+  elements.themeToggle.setAttribute(
+    "title",
+    isDark ? "Hellmodus aktivieren" : "Dunkelmodus aktivieren",
+  );
+  elements.themeToggle.querySelector(".theme-toggle-icon").innerHTML = isDark
+    ? "&#9728;"
+    : "&#9790;";
+  elements.themeColor.setAttribute("content", isDark ? "#131f24" : "#ffffff");
+
+  try {
+    localStorage.setItem("b1-glossar-theme", selectedTheme);
+  } catch {
+    // The app remains usable when persistent storage is unavailable.
+  }
+}
 
 function escapeHtml(value) {
   return value.replace(/[&<>"']/g, (character) => ({
@@ -232,6 +260,10 @@ elements.wordList.addEventListener("click", (event) => {
 elements.previousWord.addEventListener("click", () => changeSelectedWord(-1));
 elements.nextWord.addEventListener("click", () => changeSelectedWord(1));
 
+elements.themeToggle.addEventListener("click", () => {
+  applyTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark");
+});
+
 document.addEventListener("keydown", (event) => {
   const isTyping = ["INPUT", "TEXTAREA"].includes(document.activeElement?.tagName);
 
@@ -252,4 +284,5 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+applyTheme(document.documentElement.dataset.theme);
 loadGlossary();
