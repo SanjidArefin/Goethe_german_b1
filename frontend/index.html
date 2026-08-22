@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +18,7 @@
           </div>
         </div>
 
-        <nav class="chapter-nav" aria-label="Chapters">
+        <nav class="chapter-nav" aria-label="Kapitel">
           <div class="nav-heading">
             <span>Kapitel</span>
             <span id="total-count">...</span>
@@ -44,7 +44,7 @@
           </div>
           <label class="search-field" for="search-input">
             <span class="search-symbol" aria-hidden="true">&#8981;</span>
-            <span class="sr-only">Search the glossary</span>
+            <span class="sr-only">Wort oder Bedeutung suchen</span>
             <input
               id="search-input"
               type="search"
@@ -52,7 +52,7 @@
               spellcheck="false"
               placeholder="Wort oder Bedeutung suchen"
             >
-            <button id="clear-search" class="clear-search" type="button" title="Clear search" aria-label="Clear search" hidden>
+            <button id="clear-search" class="clear-search" type="button" title="Suche leeren" aria-label="Suche leeren" hidden>
               &times;
             </button>
           </label>
@@ -61,28 +61,29 @@
         <section class="word-list-panel" aria-labelledby="page-title">
           <header class="list-header">
             <div class="list-summary">
-              <span id="result-count">0 entries</span>
+              <span id="result-count">0 Eintraege</span>
               <span class="sort-note">A-Z</span>
             </div>
             <span class="list-label">Deutsch</span>
             <span class="list-label">English</span>
           </header>
-          <div id="word-list" class="word-list" role="listbox" aria-label="Glossary entries"></div>
+          <div id="word-list" class="word-list" role="listbox" aria-label="Glossareintraege"></div>
         </section>
       </main>
 
       <aside class="detail-panel" aria-live="polite">
         <div id="word-detail" class="word-detail">
-          <p class="empty-detail">Select a word</p>
+          <p class="empty-detail">Wort auswaehlen</p>
         </div>
         <div class="detail-actions">
-          <button id="previous-word" class="icon-button" type="button" title="Previous word" aria-label="Previous word">&larr;</button>
+          <button id="previous-word" class="icon-button" type="button" title="Vorheriges Wort" aria-label="Vorheriges Wort">&larr;</button>
           <span id="detail-position">0 / 0</span>
-          <button id="next-word" class="icon-button" type="button" title="Next word" aria-label="Next word">&rarr;</button>
+          <button id="next-word" class="icon-button" type="button" title="Naechstes Wort" aria-label="Naechstes Wort">&rarr;</button>
         </div>
       </aside>
     </div>
 
+    <script src="./glossary-model.js"></script>
     <script src="./app.js"></script>
   </body>
 </html>

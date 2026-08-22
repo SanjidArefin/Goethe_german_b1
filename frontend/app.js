@@ -1,8 +1,6 @@
-const CHAPTERS = Array.from({ length: 12 }, (_, index) => index + 1);
-const SEPARATOR = " \u2014 ";
-
 const state = {
   entries: [],
+  chapters: [],
   chapter: "all",
   query: "",
   selectedId: null,
@@ -36,77 +34,26 @@ function escapeHtml(value) {
   }[character]));
 }
 
-function normalizeForSearch(value) {
-  return value
-    .toLocaleLowerCase("de-DE")
-    .replaceAll("\u00e4", "ae")
-    .replaceAll("\u00f6", "oe")
-    .replaceAll("\u00fc", "ue")
-    .replaceAll("\u00df", "ss");
-}
-
 function chapterName(chapter) {
   return `Kapitel ${chapter}`;
 }
 
-function parseGlossary(text, chapter) {
-  return text
-    .split(/\r?\n/)
-    .map((line) => line.trim())
-    .filter(Boolean)
-    .map((line) => {
-      const divider = line.indexOf(SEPARATOR);
-
-      if (divider === -1) {
-        return null;
-      }
-
-      const word = line.slice(0, divider).trim();
-      const meaning = line.slice(divider + SEPARATOR.length).trim();
-
-      if (!word || !meaning) {
-        return null;
-      }
-
-      return {
-        id: `${chapter}-${word}`,
-        chapter,
-        word,
-        meaning,
-        searchText: normalizeForSearch(`${word} ${meaning}`),
-      };
-    })
-    .filter(Boolean);
-}
-
-function sortedEntries(entries) {
-  return [...entries].sort((left, right) => (
-    left.word.localeCompare(right.word, "de-DE", { sensitivity: "base" })
-    || left.chapter - right.chapter
-  ));
-}
-
 function entriesForCurrentView() {
-  const query = normalizeForSearch(state.query.trim());
-
-  return sortedEntries(
-    state.entries.filter((entry) => (
-      (state.chapter === "all" || entry.chapter === state.chapter)
-      && (!query || entry.searchText.includes(query))
-    )),
-  );
+  return GlossaryModel.filterEntries(state.entries, {
+    chapter: state.chapter,
+    query: state.query,
+  });
 }
 
 function renderChapterTabs() {
-  elements.chapterTabs.innerHTML = CHAPTERS.map((chapter) => {
-    const count = state.entries.filter((entry) => entry.chapter === chapter).length;
-    const isActive = state.chapter === chapter;
+  elements.chapterTabs.innerHTML = state.chapters.map((chapter) => {
+    const isActive = state.chapter === chapter.number;
 
     return `
       <button class="chapter-tab${isActive ? " is-active" : ""}" type="button"
-        data-chapter="${chapter}" aria-pressed="${isActive}">
-        <span>${chapterName(chapter)}</span>
-        <span class="tab-count">${count || "..."}</span>
+        data-chapter="${chapter.number}" aria-pressed="${isActive}">
+        <span>${chapter.title}</span>
+        <span class="tab-count">${chapter.entries.length}</span>
       </button>
     `;
   }).join("");
@@ -114,15 +61,16 @@ function renderChapterTabs() {
   const allActive = state.chapter === "all";
   elements.allChapterButton.classList.toggle("is-active", allActive);
   elements.allChapterButton.setAttribute("aria-pressed", String(allActive));
-  elements.allCount.textContent = state.entries.length || "...";
-  elements.totalCount.textContent = state.entries.length ? `${state.entries.length}` : "...";
+  elements.allCount.textContent = state.entries.length;
+  elements.totalCount.textContent = state.entries.length;
 }
 
 function renderHeader(visibleEntries) {
-  const scope = state.chapter === "all" ? "Alle Kapitel" : chapterName(state.chapter);
-  elements.chapterLabel.textContent = scope;
+  elements.chapterLabel.textContent = state.chapter === "all"
+    ? "Alle Kapitel"
+    : chapterName(state.chapter);
   elements.pageTitle.textContent = state.query.trim() ? "Suchergebnisse" : "Wortschatz";
-  elements.resultCount.textContent = `${visibleEntries.length} ${visibleEntries.length === 1 ? "entry" : "entries"}`;
+  elements.resultCount.textContent = `${visibleEntries.length} ${visibleEntries.length === 1 ? "Eintrag" : "Eintraege"}`;
   elements.clearSearch.hidden = !state.query;
 }
 
@@ -134,7 +82,7 @@ function ensureSelected(visibleEntries) {
 
 function renderWordList(visibleEntries) {
   if (!visibleEntries.length) {
-    elements.wordList.innerHTML = '<div class="empty-state">No matching words found.</div>';
+    elements.wordList.innerHTML = '<div class="empty-state">Keine passenden Woerter gefunden.</div>';
     return;
   }
 
@@ -168,7 +116,7 @@ function renderDetail(visibleEntries) {
   const entry = visibleEntries[currentIndex];
 
   if (!entry) {
-    elements.wordDetail.innerHTML = '<p class="empty-detail">No word selected</p>';
+    elements.wordDetail.innerHTML = '<p class="empty-detail">Kein Wort ausgewaehlt</p>';
     elements.detailPosition.textContent = "0 / 0";
     elements.previousWord.disabled = true;
     elements.nextWord.disabled = true;
@@ -228,24 +176,24 @@ async function loadGlossary() {
   elements.loadStatus.textContent = "Glossar wird geladen";
 
   try {
-    const chapterData = await Promise.all(CHAPTERS.map(async (chapter) => {
-      const fileName = `Kapitel_${String(chapter).padStart(2, "0")}_glossary_corrected.txt`;
-      const response = await fetch(`../${fileName}`);
+    const glossary = await window.glossaryApi.loadGlossary();
 
-      if (!response.ok) {
-        throw new Error(`Could not load ${fileName}`);
-      }
+    state.chapters = glossary.chapters;
+    state.entries = glossary.chapters.flatMap((chapter) => (
+      chapter.entries.map((entry) => ({
+        ...entry,
+        id: `${chapter.number}-${entry.word}`,
+        chapter: chapter.number,
+        searchText: GlossaryModel.normalizeForSearch(`${entry.word} ${entry.meaning}`),
+      }))
+    ));
 
-      return parseGlossary(await response.text(), chapter);
-    }));
-
-    state.entries = chapterData.flat();
-    elements.loadStatus.textContent = `${state.entries.length} Woerter`;
+    elements.loadStatus.textContent = `${glossary.totalEntries} Woerter`;
     render();
   } catch (error) {
     console.error(error);
     elements.loadStatus.textContent = "Glossar konnte nicht geladen werden";
-    elements.wordList.innerHTML = '<div class="empty-state">The glossary files could not be loaded.</div>';
+    elements.wordList.innerHTML = '<div class="empty-state">Die Glossardaten konnten nicht geladen werden.</div>';
   }
 }
 
@@ -285,7 +233,7 @@ elements.previousWord.addEventListener("click", () => changeSelectedWord(-1));
 elements.nextWord.addEventListener("click", () => changeSelectedWord(1));
 
 document.addEventListener("keydown", (event) => {
-  const typing = ["INPUT", "TEXTAREA"].includes(document.activeElement?.tagName);
+  const isTyping = ["INPUT", "TEXTAREA"].includes(document.activeElement?.tagName);
 
   if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "k") {
     event.preventDefault();
@@ -293,12 +241,12 @@ document.addEventListener("keydown", (event) => {
     return;
   }
 
-  if (!typing && event.key === "ArrowDown") {
+  if (!isTyping && event.key === "ArrowDown") {
     event.preventDefault();
     changeSelectedWord(1);
   }
 
-  if (!typing && event.key === "ArrowUp") {
+  if (!isTyping && event.key === "ArrowUp") {
     event.preventDefault();
     changeSelectedWord(-1);
   }
