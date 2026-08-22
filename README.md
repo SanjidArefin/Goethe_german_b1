@@ -4,7 +4,7 @@ An offline Windows glossary for the Netzwerk neu B1 vocabulary.
 
 ## Download
 
-[Download B1 Glossar for Windows](https://github.com/SanjidArefin/Goethe_german_b1/releases/download/v1.1.2/B1%20Glossar%20Setup%201.1.2.exe)
+[Download B1 Glossar for Windows](https://github.com/SanjidArefin/netzwerk_neu_b1_glossar_soft/releases/download/v1.1.2/B1%20Glossar%20Setup%201.1.2.exe)
 
 ## Development
 
