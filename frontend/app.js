@@ -16,6 +16,9 @@ const elements = {
   searchInput: document.querySelector("#search-input"),
   clearSearch: document.querySelector("#clear-search"),
   resultCount: document.querySelector("#result-count"),
+  wordListPanel: document.querySelector(".word-list-panel"),
+  listHeader: document.querySelector(".list-header"),
+  alphabetJump: document.querySelector("#alphabet-jump"),
   wordList: document.querySelector("#word-list"),
   wordDetail: document.querySelector("#word-detail"),
   detailPosition: document.querySelector("#detail-position"),
@@ -25,6 +28,12 @@ const elements = {
   themeToggle: document.querySelector("#theme-toggle"),
   themeColor: document.querySelector('meta[name="theme-color"]'),
 };
+
+const GERMAN_ALPHABET = [
+  "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
+  "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
+  "Ä", "Ö", "Ü",
+];
 
 function applyTheme(theme) {
   const selectedTheme = theme === "dark" ? "dark" : "light";
@@ -121,7 +130,7 @@ function renderWordList(visibleEntries) {
     const letter = entry.word.slice(0, 1).toLocaleUpperCase("de-DE");
 
     if (letter !== lastLetter) {
-      rows.push(`<div class="letter-heading" aria-hidden="true">${escapeHtml(letter)}</div>`);
+      rows.push(`<div class="letter-heading" data-letter="${escapeHtml(letter)}" aria-hidden="true">${escapeHtml(letter)}</div>`);
       lastLetter = letter;
     }
 
@@ -137,6 +146,24 @@ function renderWordList(visibleEntries) {
   }
 
   elements.wordList.innerHTML = rows.join("");
+}
+
+function renderAlphabetJump(visibleEntries) {
+  const availableLetters = new Set(visibleEntries.map((entry) => (
+    entry.word.slice(0, 1).toLocaleUpperCase("de-DE")
+  )));
+
+  elements.alphabetJump.innerHTML = GERMAN_ALPHABET.map((letter) => {
+    const available = availableLetters.has(letter);
+    const status = available ? `Zu ${letter} springen` : `Keine Woerter mit ${letter}`;
+
+    return `
+      <button class="alphabet-button" type="button" data-letter="${letter}"
+        aria-label="${status}" title="${status}"${available ? "" : " disabled"}>
+        ${letter}
+      </button>
+    `;
+  }).join("");
 }
 
 function renderDetail(visibleEntries) {
@@ -170,6 +197,7 @@ function render() {
   renderChapterTabs();
   renderHeader(visibleEntries);
   renderWordList(visibleEntries);
+  renderAlphabetJump(visibleEntries);
   renderDetail(visibleEntries);
 }
 
@@ -198,6 +226,7 @@ function selectChapter(chapter) {
   state.chapter = chapter === "all" ? "all" : Number(chapter);
   state.selectedId = null;
   render();
+  elements.wordListPanel.scrollTop = 0;
 }
 
 async function loadGlossary() {
@@ -239,6 +268,7 @@ elements.searchInput.addEventListener("input", (event) => {
   state.query = event.target.value;
   state.selectedId = null;
   render();
+  elements.wordListPanel.scrollTop = 0;
 });
 
 elements.clearSearch.addEventListener("click", () => {
@@ -247,6 +277,7 @@ elements.clearSearch.addEventListener("click", () => {
   state.selectedId = null;
   elements.searchInput.focus();
   render();
+  elements.wordListPanel.scrollTop = 0;
 });
 
 elements.wordList.addEventListener("click", (event) => {
@@ -254,6 +285,29 @@ elements.wordList.addEventListener("click", (event) => {
 
   if (row) {
     selectEntry(row.dataset.entryId);
+  }
+});
+
+elements.alphabetJump.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-letter]");
+
+  if (!button || button.disabled) {
+    return;
+  }
+
+  const letter = CSS.escape(button.dataset.letter);
+  const target = elements.wordList.querySelector(`.letter-heading[data-letter="${letter}"]`);
+
+  if (target) {
+    const targetTop = target.getBoundingClientRect().top
+      - elements.wordListPanel.getBoundingClientRect().top
+      + elements.wordListPanel.scrollTop;
+    const stickyOffset = elements.listHeader.offsetHeight + elements.alphabetJump.offsetHeight;
+
+    elements.wordListPanel.scrollTo({
+      behavior: "auto",
+      top: Math.max(0, targetTop - stickyOffset),
+    });
   }
 });
 

@@ -24,6 +24,8 @@ async function run() {
 
   const window = new BrowserWindow({
     show: false,
+    width: 1920,
+    height: 1080,
     webPreferences: {
       contextIsolation: true,
       nodeIntegration: false,
@@ -56,11 +58,28 @@ async function run() {
       "      document.querySelector('[data-chapter=\\\"3\\\"]').click();",
       "      setTimeout(() => {",
       "        const chapterRows = [...document.querySelectorAll('.word-row')];",
+      "        const kButton = document.querySelector('.alphabet-button[data-letter=\\\"K\\\"]');",
+      "        const kHeading = document.querySelector('.letter-heading[data-letter=\\\"K\\\"]');",
+      "        const wordListPanel = document.querySelector('.word-list-panel');",
+      "        const appShell = document.querySelector('.app-shell').getBoundingClientRect();",
+      "        const headerCells = [...document.querySelector('.list-header').children];",
+      "        const rowCells = [...document.querySelector('.word-row').children];",
+      "        const headerBounds = headerCells.map((cell) => cell.getBoundingClientRect());",
+      "        const rowBounds = rowCells.map((cell) => cell.getBoundingClientRect());",
+      "        const columnsAligned = Math.abs(headerBounds[0].left - rowBounds[0].left) <= 1",
+      "          && Math.abs(headerBounds[1].left - rowBounds[1].left) <= 1",
+      "          && Math.abs(headerBounds[2].right - rowBounds[2].right) <= 1;",
+      "        kButton.click();",
       "        const before = document.querySelector('.word-row.is-selected')?.dataset.entryId;",
       "        document.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowDown', bubbles: true }));",
       "        setTimeout(() => resolve({",
       "          totalEntries: Number(document.querySelector('#all-count').textContent),",
       "          chapterRows: chapterRows.length,",
+      "          alphabetJumpWorks: !kButton.disabled && kHeading !== null,",
+      "          alphabetJumpMoved: wordListPanel.scrollTop > 0,",
+      "          columnsAligned,",
+      "          fillsViewport: Math.abs(appShell.width - window.innerWidth) <= 1",
+      "            && Math.abs(appShell.height - window.innerHeight) <= 1,",
       "          foundTransliterated,",
       "          movedSelection: before !== document.querySelector('.word-row.is-selected')?.dataset.entryId,",
       "          initialTheme,",
@@ -82,6 +101,10 @@ async function run() {
 
     assert.equal(result.totalEntries, 9435);
     assert.equal(result.chapterRows, 892);
+    assert.equal(result.alphabetJumpWorks, true);
+    assert.equal(result.alphabetJumpMoved, true);
+    assert.equal(result.columnsAligned, true);
+    assert.equal(result.fillsViewport, true);
     assert.equal(result.foundTransliterated, true);
     assert.equal(result.movedSelection, true);
     assert.equal(result.initialTheme, "dark");
